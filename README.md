@@ -32,7 +32,7 @@ A sleek and minimal weather application built with HTML, CSS, and JavaScript. Th
     <img src="./assets/screenshots/weather-app-search.png" alt="Search Screen" />
   </p> 
   <p align="center">
-  *The initial screen where users can search for a city's weather.*
+  <i>The initial screen where users can search for a city's weather.</i>
   </p>
 
 - **Weather App Main Interface**  
@@ -40,7 +40,7 @@ A sleek and minimal weather application built with HTML, CSS, and JavaScript. Th
     <img src="./assets/screenshots/weather-app-main.png" alt="Main Interface" />
   </p> 
   <p align="center">
-  *Displays current weather conditions and a 5-day forecast for the searched city.*
+  <i>Displays current weather conditions and a 5-day forecast for the searched city.</i>
   </p>
 
 - **City Not Found**  
@@ -48,7 +48,7 @@ A sleek and minimal weather application built with HTML, CSS, and JavaScript. Th
     <img src="./assets/screenshots/weather-app-not-found.png" alt="Not Found" />
   </p>  
   <p align="center">
-  *The "City Not Found" message appears when the app cannot find the weather for the searched city.*
+  <i>The "City Not Found" message appears when the app cannot find the weather for the searched city.</i>
   </p>
 
 ## Getting Started
@@ -91,9 +91,6 @@ In `script.js`, replace the placeholder apiKey variable with your actual API key
 ```bash
     Weather-App/
     ## Project Structure
-
-```bash
-    Weather-App/
     │
     ├── assets/                         # Static assets (images, icons, etc.)
     │   ├── message/                    # Message images for empty or error states
