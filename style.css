@@ -1,0 +1,242 @@
+/* Import Google Fonts (Poppins) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+/* General Styles Reset and Global Typography */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-weight: 600;
+}
+
+body {
+    background: url('assets/bg.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(15px);
+    z-index: 0;
+}
+
+/* Utilities */
+.regular-txt {
+    font-weight: 400;
+}
+
+/* App Container Styles */
+.app-container {
+    width: 300px;
+    min-height: 496px;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.15),
+        rgba(255, 255, 255, 0.15)
+    );
+    border-radius: 12px;
+    backdrop-filter: blur(100px);
+    padding: 20px;
+    z-index: 1;
+    position: relative;
+}
+
+/* Search Section */
+.app-container__header {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.app-container__search-input {
+    width: 100%;
+    padding: 10px 16px;
+    border-radius: 50px;
+    border: 3px solid transparent;
+    background: rgba(0, 0, 0, 0.15);
+    outline: none;
+    transition: border 0.25s ease;
+    padding-right: 45px;
+}
+
+.app-container__search-input::placeholder {
+    color: rgba(255, 255, 255, 0.15);
+}
+
+.app-container__search-input:focus {
+    border: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.app-container__search-btn {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+}
+
+.app-container__search-btn:hover {
+    animation: glow 1s infinite alternate, rotate 1s ease infinite;
+}
+
+/* Weather Section */
+.weather-section {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Location and Date Info */
+.weather-section__location-date {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.weather-section__location {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Weather Summary */
+.weather-section__summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.weather-section__icon {
+    width: 120px;
+    height: 120px;
+}
+
+.weather-section__details {
+    text-align: end;
+}
+
+/* Weather Conditions */
+.weather-section__conditions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.weather-section__condition-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.weather-section__condition-item span {
+    font-size: 30px;
+}
+
+/* 5-Day Forecast */
+.weather-section__forecast {
+    display: flex;
+    gap: 15px;
+    overflow-x: scroll;
+    padding-bottom: 12px;
+}
+
+.weather-section__forecast::-webkit-scrollbar {
+    height: 8px;
+}
+
+.weather-section__forecast::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 99px;
+}
+
+.weather-section__forecast::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.15);
+}
+
+.weather-section__forecast-item {
+    min-width: 70px;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border-radius: 12px;
+    transition: background 0.3s;
+}
+
+.weather-section__forecast-item:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.weather-section__forecast-icon {
+    width: 35px;
+    height: 35px;
+}
+
+/* Message Section (for Search/Not Found States) */
+.app-container__message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+    margin-top: 25%;
+}
+
+.app-container__message img {
+    height: 180px;
+}
+
+/* Loader Spinner */
+.app-container__loader {
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
+
+/* Animations */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+    }
+}
